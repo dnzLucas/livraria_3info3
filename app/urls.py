@@ -9,12 +9,12 @@ from drf_spectacular.views import (
 )
 from rest_framework.routers import DefaultRouter
 
-from core.views import AutorViewSet, EditoraViewSet, UserViewSet, CategoriaViewSet, LivroViewSet
+from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet, UserViewSet
 from uploader.router import router as uploader_router
 
 router = DefaultRouter()
 
-router.register(r'categorias', CategoriaViewSet, basename='categorias' )
+router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r'usuarios', UserViewSet, basename='usuarios')
 router.register(r'editoras', EditoraViewSet, basename='editoras')
 router.register(r'autores', AutorViewSet, basename='autores')
@@ -38,7 +38,7 @@ urlpatterns = [
     # uploader
     path(
         "api/media/",
-        include(uploader_router.urls)),  
+        include(uploader_router.urls)),
     # API
     path(
         'api/',
